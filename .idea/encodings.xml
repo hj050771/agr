@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-appapi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-business" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-dal" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-genapi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agr-webapi" charset="UTF-8" />
+  </component>
+</project>

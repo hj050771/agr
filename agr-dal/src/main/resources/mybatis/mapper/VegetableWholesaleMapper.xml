@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cesgroup.agr.mapper.VegetableWholesaleMapper">
+  <resultMap id="BaseResultMap" type="com.cesgroup.agr.entity.VegetableWholesale">
+    <result column="ep_id" jdbcType="VARCHAR" property="epId" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+  <select id="selectList" resultType="com.cesgroup.agr.entity.VegetableWholesale">
+	  	SELECT
+			vw.*
+		FROM
+			vegetable_wholesale vw
+		WHERE
+				vw.delete_flg = #{deleteFlg}
+			<if test="epId != null and epId != ''">
+				AND vw.ep_id = #{epId}
+			</if>
+			<if test="name != null and name != ''">
+				AND vw.`name` = #{name}
+			</if>
+			<if test="code != null and code != ''">
+				AND vw.`code` = #{code}
+			</if>
+  </select>
+</mapper>

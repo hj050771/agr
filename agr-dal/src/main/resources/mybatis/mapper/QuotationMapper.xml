@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cesgroup.agr.mapper.QuotationMapper">
+  <resultMap id="BaseResultMap" type="com.cesgroup.agr.entity.Quotation">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <result column="ep_id" jdbcType="VARCHAR" property="epId" />
+    <result column="product_id" jdbcType="VARCHAR" property="productId" />
+    <result column="specification" jdbcType="VARCHAR" property="specification" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="sale_date" jdbcType="DATE" property="saleDate" />
+    <result column="sale_volume" jdbcType="DECIMAL" property="saleVolume" />
+    <result column="sale_price" jdbcType="DECIMAL" property="salePrice" />
+    <result column="guide_price_upper" jdbcType="DECIMAL" property="guidePriceUpper" />
+    <result column="guide_price_lower" jdbcType="DECIMAL" property="guidePriceLower" />
+  </resultMap>
+</mapper>

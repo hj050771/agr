@@ -1,0 +1,5 @@
+com\cesgroup\agr\controller\BaseController.class
+com\cesgroup\agr\interceptor\ApiInterceptor.class
+com\cesgroup\agr\config\WebMvcConfig.class
+com\cesgroup\agr\controller\TokenController.class
+com\cesgroup\agr\GenApiApplication.class

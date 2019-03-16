@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cesgroup.agr.mapper.ComplaintPraiseMapper">
+  <resultMap id="BaseResultMap" type="com.cesgroup.agr.entity.ComplaintPraise">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <result column="ep_id" jdbcType="VARCHAR" property="epId" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="cp_time" jdbcType="TIMESTAMP" property="cpTime" />
+    <result column="score" jdbcType="DECIMAL" property="score" />
+    <result column="market_booth" jdbcType="VARCHAR" property="marketBooth" />
+    <result column="market_code" jdbcType="VARCHAR" property="marketCode" />
+    <result column="customer_type" jdbcType="TINYINT" property="customerType" />
+    <result column="customer_code" jdbcType="VARCHAR" property="customerCode" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="result" jdbcType="VARCHAR" property="result" />
+  </resultMap>
+</mapper>

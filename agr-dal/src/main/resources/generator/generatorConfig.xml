@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 使用方法:
+       1.配置 properties.
+       2.配置数据库驱动位置.
+       3.配置需要反向生成代码的表.
+       4.配置完成后,在项目目录test-maven下运行：mvn mybatis-generator:generate
+       5.生成的代码在：target/generated-sources/mybatis-generator目录下.
+     -->
+   <!-- <properties resource="application.properties"/>-->
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.cesgroup.agr.util.MyMapper"/>
+        </plugin>
+
+        <!-- 必须要有的，使用这个配置链接数据库
+        -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/agricultural?useUnicode=true&amp;characterEncoding=utf-8" userId="root" password="123456">
+            <!-- 这里面可以设置property属性，每一个property属性都设置到配置的Driver上 -->
+        </jdbcConnection>
+
+
+        <!-- java类型处理器
+        用于处理DB中的类型到Java中的类型，默认使用JavaTypeResolverDefaultImpl；
+        注意一点，默认会先尝试使用Integer，Long，Short等来对应DECIMAL和 NUMERIC数据类型；
+    -->
+        <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+            <!--
+                true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型
+                false：默认,
+                    scale>0;length>18：使用BigDecimal;
+                    scale=0;length[10,18]：使用Long；
+                    scale=0;length[5,9]：使用Integer；
+                    scale=0;length<5：使用Short；
+             -->
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.cesgroup.agr.entity" targetProject="src/main/java">
+            <!--<property name="rootClass" value="com.cesgroup.cssp.entity.BaseEntity"/>-->
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.cesgroup.agr.mapper" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="accounts">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="brand">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="complaint_praise">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="customer">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="division">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="enterprise">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_meat_brand">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_meat_product">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_meat_supplier">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_meat_wholesale">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_vegetable_brand">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_vegetable_product">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_vegetable_supplier">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="link_vegetable_wholesale">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="meat_approach">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="meat_purchase_price">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="meat_sale">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="product">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="quotation">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="slaughterhouse">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="vegetable_approach">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="vegetable_purchase_price">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="vegetable_sale">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+        <table tableName="vegetable_wholesale">
+            <ignoreColumn column="id"/>
+            <ignoreColumn column="delete_flg"/>
+            <ignoreColumn column="create_user"/>
+            <ignoreColumn column="create_time"/>
+            <ignoreColumn column="update_user"/>
+            <ignoreColumn column="update_time"/>
+            <!--mysql 配置-->
+           <!-- <generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+    </context>
+</generatorConfiguration>
